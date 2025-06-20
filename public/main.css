@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*nav.ejs */
+.nav {
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+.nav a {
+    margin-right: 10px;
+}
+.logo,
+.mypage {
+    font-weight: bold;
+}
+
+.userinfo {
+    display: flex;
+}
+.logout {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 16px;
+}
+
+/* list.ejs */
+.search {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 5px;
+}
+.search-send {
+    padding: 6px 10px;
+    background: lightgray;
+    border: none;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+.grey-bg {
+    background: #eee;
+}
+.white-bg {
+    background: white;
+    margin: 20px;
+    border-radius: 5px;
+}
+.list-box {
+    padding: 10px;
+    border-bottom: 1px solid#eee;
+}
+.list-box h4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin: 5px;
+}
+.list-box > p {
+    font-size: 13px;
+    margin: 5px;
+    color: grey;
+}
+
+.writer-auth {
+    display: flex;
+    align-items: center;
+}
+
+.list-writer {
+    font-size: 14px;
+    margin: 5px;
+    margin-right: 20px;
+}
+
+.delete {
+    margin-left: 10px;
+    border: 0;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+/* write.ejs */
+input,
+div {
+    box-sizing: border-box;
+}
+.form-box {
+    background: white;
+    padding: 25px;
+    margin: 20px;
+    border-radius: 8px;
+}
+.form-box input {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.form-box button {
+    padding: 10px;
+    border: none;
+    background: lightgrey;
+    border-radius: 5px;
+}
+
+/* post.ejs */
+.post-bg {
+    background: white;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+/* pagination.ejs*/
+#pagination {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    align-items: center;
+    background: none;
+}
+
+#pagination a {
+    cursor: pointer;
+    margin: 10px;
+    padding: 5px;
+}
+
+.curr-page {
+    background-color: rgb(187, 200, 255);
+
+    border-radius: 10px;
+}
+
+.post-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-writer {
+    margin: 10px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.comment-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    /* padding: 25px; */
+    /* margin: 20px; */
+    border-radius: 8px;
+}
+.comment-box input {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+.comment-box button {
+    /* margin: 10px; */
+    padding: 10px;
+    border: none;
+    background: lightgrey;
+    border-radius: 5px;
+    width: 50px;
+}

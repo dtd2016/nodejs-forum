@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="/main.css" rel="stylesheet" />
+    </head>
+    <body class="grey-bg">
+        <%- include('nav.ejs') %>
+
+        <input class="search" value="<%= keyword %>" />
+        <button class="search-send">검색</button>
+        <script>
+            document
+                .querySelector('.search-send')
+                .addEventListener('click', function () {
+                    let keyword = document.querySelector('.search').value
+                    location.href = '/search?keyword=' + keyword
+                })
+        </script>
+
+        <div class="white-bg">
+            <% if (!posts.length) { %>
+            <h3 style="padding: 30px">게시글이 존재하지 않습니다.</h3>
+            <% } %> <% for (let i = posts.length - 1; i >= 0; i--) { %>
+            <div class="list-box">
+                <h4>
+                    <a
+                        class="post-title"
+                        href="/post?postId=<%= posts[i]._id %>"
+                    >
+                        <%= posts[i].title %>
+                    </a>
+                    <div class="writer-auth">
+                        <p class="list-writer"><%= posts[i].username %></p>
+                        <a class="edit" href="/edit?postId=<%= posts[i]._id %>">
+                            ✏️
+                        </a>
+                        <form
+                            action="/post?postId=<%= posts[i]._id%>&_method=DELETE"
+                            method="POST"
+                        >
+                            <button
+                                class="delete"
+                                type="submit"
+                                style="cursor: pointer"
+                            >
+                                🗑️
+                            </button>
+                        </form>
+                    </div>
+                </h4>
+                <p><%= posts[i].content %></p>
+            </div>
+            <% } %>
+        </div>
+
+        <%- include('pagination.ejs') %>
+
+        <script>
+            // for (let i = 0; i < '<%= posts.length %>'; i++) {
+            //     document
+            //         .querySelectorAll('.delete')
+            //         [i].addEventListener('click', function (e) {
+            //             if (confirm('삭제하시겠습니까?')) {
+            //                 fetch('/post?postId=' + e.target.dataset.id, {
+            //                     method: 'DELETE',
+            //                 })
+            //                 // .then((r) => r.text())
+            //                 // .then((r) => {
+            //                 //     alert(r)
+            //                 //     location.reload()
+            //                 // })
+            //             }
+            //         })
+            // }
+        </script>
+    </body>
+</html>

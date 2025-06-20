@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="/main.css" rel="stylesheet" />
+    </head>
+    <body class="grey-bg">
+        <%- include('nav.ejs') %>
+
+        <form class="form-box" action="/post" method="POST">
+            <h4>글쓰기</h4>
+            <input placeholder="제목을 입력해주세요." name="title" />
+            <input placeholder="내용을 입력해주세요." name="content" />
+            <button type="submit">작성 완료</button>
+        </form>
+    </body>
+</html>

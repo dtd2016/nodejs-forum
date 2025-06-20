@@ -1,0 +1,34 @@
+<div id="pagination">
+    <% if (pages.start != 1) { %>
+    <a id="page=<%= pages.start - 1 %>&pageSize=<%= pages.postsPerPage %>">
+        이전
+    </a>
+    <% } %> <% for (let i = pages.start; i <= pages.end; i++) { %> <% if (i ==
+    pages.curr) { %>
+    <a id="page=<%= i %>&pageSize=<%= pages.postsPerPage %>" class="curr-page">
+        <%= i %>
+    </a>
+    <% } else { %>
+    <a id="page=<%= i %>&pageSize=<%= pages.postsPerPage %>"> <%= i %> </a>
+    <% } %> <% } %> <% if (pages.end != pages.count) { %>
+    <a id="page=<%= pages.end + 1 %>&pageSize=<%= pages.postsPerPage %>">
+        다음
+    </a>
+    <% } %>
+</div>
+
+<script>
+    let anchorElements = document.querySelectorAll('#pagination > a')
+    for (let i = 0; i < anchorElements.length; i++) {
+        anchorElements[i].onclick = function () {
+            if ('<%= keyword %>') {
+                // search
+                anchorElements[i].href =
+                    '/search?keyword=<%= keyword %>&' + anchorElements[i].id
+            } else {
+                // list
+                anchorElements[i].href = '/list?' + anchorElements[i].id
+            }
+        }
+    }
+</script>

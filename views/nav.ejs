@@ -1,0 +1,18 @@
+<div class="nav">
+    <div>
+        <a href="/" class="logo">NodeJS Forum</a>
+        <a href="/list">글목록</a>
+        <a href="/write">글쓰기</a>
+    </div>
+    <div class="userinfo">
+        <% if (!user) { %>
+        <a href="/login" class="login">로그인</a>
+        <a href="/register" class="register">회원가입</a>
+        <% } else { %>
+        <a href="/mypage" class="mypage"> <%= user.username %> </a>
+        <form action="/logout" method="POST">
+            <button class="logout">로그아웃</button>
+        </form>
+        <% } %>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="/main.css" rel="stylesheet" />
+    </head>
+    <body class="grey-bg">
+        <%- include('nav.ejs') %>
+
+        <form class="form-box" action="/register" method="POST">
+            <h4>가입하기</h4>
+            <input placeholder="아이디를 입력해주세요." name="username" />
+            <input
+                placeholder="비밀번호를 입력해주세요."
+                name="password"
+                type="password"
+            />
+            <input
+                placeholder="비밀번호를 한 번 더 입력해주세요."
+                name="password2"
+                type="password"
+            />
+            <button type="submit">가입 완료</button>
+        </form>
+    </body>
+</html>

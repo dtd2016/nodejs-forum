@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="/main.css" rel="stylesheet" />
+    </head>
+    <body class="grey-bg">
+        <%- include('nav.ejs') %>
+
+        <div class="post-bg">
+            <h2 class="post-title">
+                <%= post.title %>
+                <p class="post-writer">작성자: <%= post.username %></p>
+            </h2>
+            <p><%= post.content %></p>
+            <hr style="margin-top: 60px" />
+            <h3>댓글</h3>
+            <% for (let i = 0; i < comments.length; i++) { %>
+            <div>
+                <p>
+                    <strong> <%= comments[i].writer %> </strong> <%=
+                    comments[i].content %>
+                </p>
+            </div>
+            <% } %> <% if (user) { %>
+            <form class="comment-box" action="/comment" method="POST">
+                <input name="content" />
+                <input
+                    name="parentId"
+                    value="<%= post._id %>"
+                    style="display: none"
+                />
+                <button type="submit">등록</button>
+            </form>
+            <% } %>
+        </div>
+    </body>
+</html>

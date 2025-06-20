@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="/main.css" rel="stylesheet" />
+    </head>
+    <body class="grey-bg">
+        <%- include('nav.ejs') %>
+
+        <form class="form-box" action="/login" method="POST">
+            <h4>로그인</h4>
+            <input placeholder="아이디" name="username" />
+            <input placeholder="비밀번호" name="password" type="password" />
+            <input style="display: none" name="dir" value="<%= dir %>" />
+            <button type="submit">로그인</button>
+        </form>
+    </body>
+</html>
